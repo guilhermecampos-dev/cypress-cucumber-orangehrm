@@ -1,16 +1,15 @@
 import LoginElements from "../elements/login_elements";
 
 const loginElements = new LoginElements();
-const url = Cypress.config('baseUrl');
 
 class LoginPage {
 
     accessLoginPage(){
-        cy.visit(url);
+        cy.visit('/');
     }
 
-    fillLoginInfo(email, password){
-        cy.get(loginElements.inputUserName()).type(email);
+    fillLoginInfo(username, password){
+        cy.get(loginElements.inputUserName()).type(username);
         cy.get(loginElements.inputPassword()).type(password);
     }
 
